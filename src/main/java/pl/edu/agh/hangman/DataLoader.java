@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class DataLoader {
+public class DataLoader{
 
     private List<String>words=new ArrayList<>();
     public List<String> getWords() {
