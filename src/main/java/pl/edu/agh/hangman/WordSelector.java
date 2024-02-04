@@ -5,19 +5,20 @@ import java.util.Random;
 
 public class WordSelector {
     private String word;
+
+    DataLoader dataloader = new DataLoader();
+    Random random = new Random();
+
+
+    private String getRandomElement() {
+        List<String> words = dataloader.getWords();
+        return words.get(random.nextInt(0, words.size() - 1));
+    }
+
     public String getWord() {
-        return word;
+        return getRandomElement();
     }
-   DataLoader dataloader= new DataLoader();
-
-
-    private void getRandomElement(){
-
-            List<String> words=dataloader.getWords();
-            this.word=words.get(new Random().nextInt(words.size()));
-        }
-
-    }
+}
 
 
 

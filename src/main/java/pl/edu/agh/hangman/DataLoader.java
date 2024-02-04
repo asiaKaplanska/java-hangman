@@ -6,13 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class DataLoader{
+public class DataLoader {
 
-    private List<String>words=new ArrayList<>();
+    private List<String> words = new ArrayList<>();
+    private int length;
     public List<String> getWords() {
         return words;
     }
-    public void loadWords (String filepath) throws FileNotFoundException {
+
+
+    public void loadWords(String filepath) throws FileNotFoundException {
 
         File textFile = new File(filepath);
         Scanner scanner = new Scanner(textFile);
@@ -20,7 +23,13 @@ public class DataLoader{
             this.words.add(scanner.next());
         }
         scanner.close();
-
     }
 
+    public void setLength() {
+        this.length = words.size();
+    }
+
+    public int getLength() {
+        return length;
+    }
 }

@@ -11,16 +11,17 @@ public class GameEngine {
     private HashSet<String> lettersToGuess;   // collection of unique letters
     private int amountLettersToGuess;    // winning factor
     private int failures;     // amount of failures
-    private final DataLoader dataLoader = new DataLoader;
+    private final WordSelector wordSelector = new WordSelector();
     private HashMap<Integer, String> wordToGuess;   // word with places
     private InputSystem inputSystem = new InputSystem();
     private GameUI gameUI = new GameUI();
 
     void playGame() {
+        ckeckLetter();
     }
 
     void setWord() {
-        this.word = dataLoader.getWord;
+        this.word = wordSelector.getWord();
     }
 
     public void setWordLetters() {
@@ -42,8 +43,8 @@ public class GameEngine {
         }
     }
 
-    void ckeckLetter() {
-        if (lettersToGuess.contains(inputSystem.getUserInput())) {
+    public void ckeckLetter() {
+        if (wordSelector.getWord().contains(inputSystem.getUserInput())) {
             System.out.println("Znaleziono litere"); //TODO: to be implemented
         } else {
             failures++;
