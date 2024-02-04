@@ -71,6 +71,12 @@ public class GameUI {
             "========"
     };
 
+    private static final String USER_INPUT = "Please, insert letter: ";
+
+    public void printUserInputQuery() {
+        System.out.println(USER_INPUT);
+    }
+
     public void printGameDescriptionMessage() {
         System.out.println(GAME_DESCRIPTION);
     }
